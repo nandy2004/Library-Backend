@@ -102,13 +102,13 @@ async def add_new_user(request: Request):
 @app.put('/users/updateuserdetails/{user_id}')
 async def update_user_details(request: Request,user_id):
     data =await request.json()
-    result =db.table('Users').update(data).eq('id',user_id).execute()
+    result =db.table('Users').update(data).eq('user_id',user_id).execute()
     return "user details are Updated Successfully"
 
 #To delete a user details
 @app.delete('/users/deleteauser/{user_id}')
 def delete_a_user(user_id):
-    result = db.table('Users').delete().eq('id',user_id).execute()
+    result = db.table('Users').delete().eq('user_id',user_id).execute()
     return "user deleted Successfully"
 
 # ISSUE A BOOK / User collecting a book from the library
