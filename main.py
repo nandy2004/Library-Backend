@@ -20,7 +20,7 @@ def get_all_books():
 #To get a book by book_id
 @app.get('/books/{book_id}')
 def get_book_by_id(book_id):
-    result= db.table('Books').select('*').eq('id',book_id).execute()
+    result= db.table('Books').select('*').eq('book_id',book_id).execute()
     data= result.data
     return data
 
@@ -76,7 +76,7 @@ def get_all_users():
 #To get a user details by user_id
 @app.get('/users/{user_id}')
 def get_user_by_id(user_id):
-    result= db.table('Users').select('*').eq('id',user_id).execute()
+    result= db.table('Users').select('*').eq('user_id',user_id).execute()
     data= result.data
     return data
 
